@@ -5,5 +5,8 @@ const nextConfig = {
   output: 'export',
   basePath: isGithubPages ? `/${repoName}` : '',
   assetPrefix: isGithubPages ? `/${repoName}/` : '',
+  images: {
+    unoptimized: true,
+  },
 };
 export default nextConfig;
