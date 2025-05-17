@@ -41,8 +41,8 @@ export default function SongSelection() {
       id: 6,
       title: "Asmalibrasi",
       artist: "Soegi Bornean",
-      imageSrc: "/images/Asmalibrasi.jpg",
-      audioSrc: "/music/Asmalibrasi.mp3"
+      imageSrc: "/images/asmalibrasi.jpg",
+      audioSrc: "/music/asmalibrasi.mp3"
     }
   ];
 
