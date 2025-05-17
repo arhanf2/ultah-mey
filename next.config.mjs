@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
+const isGithubPages = process.env.NODE_ENV === 'production';
+const repoName = 'ultah-meyy';
+const nextConfig = {
+  output: 'export',
+  basePath: isGithubPages ? `/${repoName}` : '',
+  assetPrefix: isGithubPages ? `/${repoName}/` : '',
+};
 export default nextConfig;

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { Balloons } from "@/components/ui/balloons";
 import ImageTrail from "@/components/ImageTrail";
 import SplitText from "@/components/SplitText";
@@ -18,7 +19,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { Gravity, MatterBody } from "@/components/ui/gravity";
 
 
-export default function Birthday() {
+function BirthdayContent() {
   const balloonsRef = useRef(null);
   const audioRef = useRef(null);
   const [wishes, setWishes] = useState([
@@ -589,5 +590,13 @@ export default function Birthday() {
       {/* Hidden audio element */}
       <audio ref={audioRef} loop />
     </main>
+  );
+}
+
+export default function Birthday() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BirthdayContent />
+    </Suspense>
   );
 }
