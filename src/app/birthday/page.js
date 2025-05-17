@@ -16,8 +16,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { Gravity, MatterBody } from "@/components/ui/gravity";
-
+import BlurText from "@/components/BlurText";
 
 function BirthdayContent() {
   const balloonsRef = useRef(null);
@@ -415,16 +414,24 @@ function BirthdayContent() {
               <h2 className="text-3xl hidden md:block font-bold text-white mb-6">
                 <MorphingText texts={["YOUR", "SPECIAL DAY!"]} />
               </h2>
-              <p className="text-xl text-justify text-white mb-4">
-                This day is all about celebrating you and the incredible person
+              <BlurText
+                text=" This day is all about celebrating you and the incredible person
                 you are. I’ve created this special page to show just how much
-                you mean to me.
-              </p>
-              <p className="text-xl text-justify text-white mb-6">
-                Explore this interactive birthday card, crafted with love just
+                you mean to me."
+                delay={150}
+                animateBy="words"
+                direction="top"
+                className="text-xl text-justify text-white mb-4"
+              />
+              <BlurText
+                text="  Explore this interactive birthday card, crafted with love just
                 for you. Swipe through cherished memories, read heartfelt
-                messages, and enjoy every moment of your special day!
-              </p>
+                messages, and enjoy every moment of your special day!"
+                delay={150}
+                animateBy="words"
+                direction="top"
+                className="text-xl text-justify text-white mb-6"
+              />
             </div>
 
             {/* iPhone - full width on mobile, half width on desktop */}
@@ -525,7 +532,7 @@ function BirthdayContent() {
         <div className="container mx-auto px-4">
           <div className="flex justify-end">
             <h2 className="text-xl md:text-2xl w-72 md:w-1/4 font-bold bg-white text-pink-600 p-3 rounded-xl text-center mb-12">
-            The one who holds my heart
+              The one who holds my heart
             </h2>
           </div>
 
